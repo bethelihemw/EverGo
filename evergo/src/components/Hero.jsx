@@ -1,19 +1,39 @@
 import React from 'react';
-import motor from "../assets/motor.png"
+import motor from '../assets/motor.png';
+// import './Hero.css';
 
 const Hero = () => {
   return (
-    <section className="hero" id="home">
-      <div className="hero-content">
-        <h1>Delivering More. <br /> <span className="highlight">Every Time.</span></h1>
-        <p>Fast, secure, and reliable delivery solutions tailored for your business needs.</p>
-        <button className="hero-btn">Track Order</button>
-      </div>
-      
-      <div className="hero-visual">
-        {/* The moving delivery guy */}
-        <img src={motor} alt="Delivery Guy" className="moving-moto" />
-        <div className="road-line"></div>
+    <section className="hero">
+      <div className="hero-container">
+        <div className="hero-content">
+          <span className="badge">Reliable Logistics for Everyone</span>
+          <h1>
+            Delivering More. <br />
+            <span className="highlight">Every Time.</span>
+          </h1>
+          <p>
+            Whether it's critical business documents, medical supplies, 
+            or your daily essentials—EverGo provides a seamless 24/7 delivery 
+            network designed for speed and security across the city.
+          </p>
+          
+          <div className="hero-btns">
+            <button className="btn-primary">Track Order</button>
+            <button className="btn-secondary">Send a Package</button>
+          </div>
+
+          <div className="hero-stats">
+            <div className="stat-item"><strong>500+</strong> <span>Active Riders</span></div>
+            <div className="stat-item"><strong>15min</strong> <span>Avg. Pickup</span></div>
+            <div className="stat-item"><strong>100%</strong> <span>Secure</span></div>
+          </div>
+        </div>
+
+        <div className="hero-visual">
+          <div className="blob-bg"></div>
+          <img src={motor} className="moto-animation" alt="EverGo Delivery" />
+        </div>
       </div>
     </section>
   );

@@ -1,11 +1,12 @@
 import React from 'react';
-// import './Footer.css';
+import logo from "../assets/logo.png"
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-brand">
+          <img className="logos" src={logo} alt="EverGo Motor" />
           <h3>EverGo</h3>
           <p>DELIVERING MORE. EVERY TIME.</p>
         </div>
