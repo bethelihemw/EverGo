@@ -4,14 +4,18 @@ import motor from '../assets/motor.png';
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section id='home' className="hero">
+      
       <div className="hero-container">
+        {/* <div className="blob-bgs"></div> */}
         <div className="hero-content">
-          <span className="badge">Reliable Logistics for Everyone</span>
+          <div className="blob-bgs"></div>
+          <span className="badge">Reliable Delivery for Everyone</span>
           <h1>
             Delivering More. <br />
             <span className="highlight">Every Time.</span>
           </h1>
+          {/* <div className="blob-bg"></div> */}
           <p>
             Whether it's critical business documents, medical supplies, 
             or your daily essentials—EverGo provides a seamless 24/7 delivery 
@@ -29,7 +33,7 @@ const Hero = () => {
             <div className="stat-item"><strong>100%</strong> <span>Secure</span></div>
           </div>
         </div>
-
+        {/* <div className="blob-bgs"></div> */}
         <div className="hero-visual">
           <div className="blob-bg"></div>
           <img src={motor} className="moto-animation" alt="EverGo Delivery" />

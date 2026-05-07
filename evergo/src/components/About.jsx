@@ -27,7 +27,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="how-it-works-modern" id="how-it-works">
+    <section className="how-it-works-modern" id="about">
       <div className="process-header">
         <span className="subtitle">Seamless Process</span>
         <h2>How EverGo <span className="highlight">Works</span></h2>
