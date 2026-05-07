@@ -1,26 +1,28 @@
 import React from 'react';
+// import './Services.css';
 import local from '../assets/local.png';
 import express from '../assets/express.png';
 import ship from '../assets/ship.png';
+
 const Services = () => {
   const serviceList = [
     { 
       title: "Local Delivery", 
       tagline: "Your City, Connected.",
       desc: "From legal documents to daily essentials, our local network ensures your items cross the city in record time with real-time transparency.",
-      img: local // Replace with a photo of a rider in the city
+      img: local 
     },
     { 
       title: "Express Shipping", 
       tagline: "Speed Without Compromise.",
       desc: "For those 'needed it yesterday' moments. Our express lane prioritizes your cargo for guaranteed next-day arrival across our entire network.",
-      img: express // Replace with a photo of a logistics plane or fast van
+      img: express 
     },
     { 
       title: "Secure Handling", 
       tagline: "Safe & Sound.",
       desc: "High-value tech or fragile medical supplies—we treat every package with white-glove care. Security isn't an option; it's our standard.",
-      img: ship // Replace with a photo of a neatly packed box or warehouse
+      img: ship 
     }
   ];
 
@@ -35,6 +37,10 @@ const Services = () => {
         <div className={`service-row ${index % 2 !== 0 ? 'reverse' : ''}`} key={index}>
           <div className="service-image-container">
             <div className="image-wrapper">
+              {/* These will be moved on top via CSS on mobile */}
+              <span className="mobile-overlay-number">0{index + 1}</span>
+              <span className="mobile-overlay-tag">{service.tagline}</span>
+              
               <img src={service.img} alt={service.title} />
               <div className="image-overlay"></div>
             </div>
