@@ -11,67 +11,53 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--white);
   color: var(--deep-blue);
-  overflow-x: hidden;
+  overflow-x: visible;
 }
 
 
 /* NAVBAR */
+/* --- CONSOLIDATED NAVBAR STYLE --- */
 
 .navbar {
+  /* Layout */
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4%;
-  background: rgb(255, 255, 255);
-  box-shadow: 0 2px 41px #ffece0;
+  padding: 0 8%; /* Balanced padding */
+  box-sizing: border-box;
+  
+  /* Background & Depth */
+  background: #ffffff;
+  box-shadow: 0 2px 20px rgba(255, 102, 0, 0.1);
+  
+  /* THE FIX: Sticky logic in the main class */
   position: sticky;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  z-index: 2000; 
 }
 
+/* Logo & Branding */
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--deep-blue);
-}
-.logos{
-    max-width: 7.2rem;
-}
-
-.logo-go { color: var(--evergo-orange); }
-
-
-
-
-
-.nav-cta {
-  background: var(--deep-blue);
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
-  /* color: white; */
-  color: white;
-}
-.nav-cta:hover{
-  background: var(--evergo-orange);
-}
-
-.navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  /* padding: 1rem 8%; */
-  background: white;
-  position: sticky;
-  top: 0;
-  z-index: 2000;
 }
 
+.logos {
+  max-width: 7.2rem;
+  height: auto;
+}
+
+/* Desktop Links */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 3rem;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -79,24 +65,39 @@ body {
   color: var(--deep-blue);
   font-weight: 550;
   transition: 0.3s;
-  
 }
-.nav-links a:hover { color: var(--evergo-orange); }
-/* Mobile Icon Styling */
+
+.nav-links a:hover { 
+  color: var(--evergo-orange); 
+}
+
+/* CTA Button */
+.nav-cta {
+  background: var(--deep-blue);
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  color: white !important; /* Ensure white text */
+  text-decoration: none;
+}
+
+.nav-cta:hover {
+  background: var(--evergo-orange);
+}
+
+/* Hamburger Icon (Hidden on Desktop) */
 .mobile-menu-icon {
-  display: none; /* Hidden on desktop */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 2rem;
-  color: #0a192f;
+  padding: 10px;
 }
 
 .hamburger-bar {
   display: block;
   width: 25px;
   height: 3px;
-  background: #0a192f;
+  background: var(--deep-blue);
   position: relative;
 }
 
@@ -105,17 +106,22 @@ body {
   position: absolute;
   width: 25px;
   height: 3px;
-  background: #0a192f;
+  background: var(--deep-blue);
   left: 0;
 }
 
 .hamburger-bar::before { top: -8px; }
 .hamburger-bar::after { top: 8px; }
 
-/* Responsive Media Query for Tablet and Phone */
+/* --- RESPONSIVE QUERIES --- */
+
 @media screen and (max-width: 850px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
   .nav-links {
-    display: none; /* Hide standard links */
+    display: none; /* Hide standard links on tablet/mobile */
   }
 
   .mobile-menu-icon {
@@ -123,18 +129,20 @@ body {
   }
 
   .nav-links-mobile {
-    position: absolute;
-    display: block;
+    position: fixed; /* Fixed so it follows the sticky navbar */
+    display: flex;
+    flex-direction: column;
     list-style: none;
-    background-color: #fcf4eb; /* Deep blue from theme */
+    background-color: #fcf4eb;
     right: 0;
-    
-    top: 65px; /* Adjust based on navbar height */
-    transition: all 0.5s ease;
-    width: 40%;
-    height: 100vh;
+    top: 80px; /* Exact height of navbar */
+    width: 70%;
+    height: calc(100vh - 80px);
     padding: 2rem 0;
     text-align: center;
+    box-shadow: -10px 10px 20px rgba(0,0,0,0.05);
+    z-index: 1999;
+    margin: 0;
   }
 
   .nav-links-mobile li {
@@ -142,15 +150,14 @@ body {
   }
 
   .nav-links-mobile li a {
-   color: var(--deep-blue);
+    color: var(--deep-blue);
     font-size: 1.2rem;
+    font-weight: 600;
     text-decoration: none;
   }
 
-  .nav-links-mobile .nav-cta {
-    background: #ff6600; /* EverGo Orange */
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
+  .logos {
+    max-width: 5.8rem;
   }
 }
 
@@ -197,8 +204,8 @@ body {
 .hero-content p {
   font-size: 1.15rem;
   color: #556080;
-  line-height: 1.7;
-  max-width: 500px;
+  line-height: 1.6;
+  max-width: 700px;
   margin-bottom: 35px;
 }
 
@@ -271,7 +278,7 @@ body {
   z-index: 1;
   animation: morph 10s linear infinite;
 }
-.blob-bgs {
+/* .blob-bgs {
   position: absolute;
   width: 700px;
   height: 500px;
@@ -279,7 +286,7 @@ body {
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   z-index: 1;
   animation: morph 10s linear infinite;
-}
+} */
 .moto-animation {
   width: 100%;
   max-width: 450px;
@@ -301,6 +308,33 @@ body {
 .highlight{
   color: var(--evergo-orange)
 }
+@media(max-width: 908px){
+.hero{
+    padding: 3.1rem;
+  }
+  .hero-content h1{
+    font-size: 3.2rem;
+  }
+}
+
+@media(max-width: 568px) {
+  .hero{
+    padding: 2.1rem;
+  }
+  .hero-content h1{
+    font-size: 2.2rem;
+  }
+  /* .hero-content p{
+    /* text-align: center; */
+    /* height: 150px; 
+  } */
+  .badge{
+    font-size: 0.7rem;
+  }
+  .moto-animation {
+    display: none;
+  }
+}
 
 
 
@@ -310,10 +344,10 @@ body {
 
 /* SERVICES */
 
-.services-modern {
+/* .services-modern {
   padding: 100px 0;
-   background: rgba(255, 102, 0, 0.01008);
-}
+   background: rgba(117, 49, 4, 0.015);
+} */
 
 .services-header {
   text-align: center;
@@ -439,7 +473,7 @@ body {
   }
 } */
 /* --- Desktop Styles (Keep existing or use these) --- */
-.services-modern { padding: 80px 0; background: #fff; }
+.services-modern { padding: 80px 0; background: rgba(255, 230, 213, 0.182); }
 .service-row { display: flex; align-items: center; gap: 80px; margin-bottom: 120px; padding: 0 10%; }
 .service-row.reverse { flex-direction: row-reverse; }
 
@@ -456,11 +490,14 @@ body {
 
 /* --- Mobile Responsiveness (The Magic) --- */
 @media (max-width: 850px) {
+  .services-header h2{
+    font-size: 2rem;
+  }
   .service-row, .service-row.reverse {
     flex-direction: column; /* Stack vertically */
     padding: 0 5%;
     gap: 30px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
   /* 1. Make the image container the relative anchor for overlays */
@@ -470,7 +507,8 @@ body {
   }
 
   .image-wrapper img {
-    height: 300px; /* Shorter for mobile */
+    height: 200px; /* Shorter for mobile */
+    
   }
 
   /* 2. Show and position the overlays on top of the image */
@@ -482,7 +520,7 @@ body {
     z-index: 10;
     font-size: 4rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.3); /* Semi-transparent white on image */
+    color: rgba(240, 240, 240, 0.945); /* Semi-transparent white on image */
   }
 
   .mobile-overlay-tag {
@@ -646,7 +684,7 @@ body {
 
 
 .contact-clean {
-  padding: 100px 10%;
+  padding: 60px 10%;
   background-color: #f9f9f9; /* Soft whitish background */
   display: flex;
   justify-content: center;
@@ -704,6 +742,9 @@ body {
 
 .input-group {
   margin-bottom: 20px;
+}
+input::placeholder {
+  font-family: monospace;
 }
 
 .contact-form-minimal input, 
