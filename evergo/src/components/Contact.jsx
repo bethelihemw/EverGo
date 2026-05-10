@@ -6,7 +6,7 @@ const Contact = () => {
       <div className="contact-wrapper">
         <div className="contact-info-panel">
           <h2>Get in <span className="highlight-orange">Touch</span></h2>
-          <p className="subtitle">Have questions about a shipment? Our team is here 24/7.</p>
+          <p className="subtitle">Have questions about a Delivery? Our team is here 24/7.</p>
           
           <div className="contact-details">
             <div className="detail-item">
@@ -15,7 +15,8 @@ const Contact = () => {
             </div>
             <div className="detail-item">
               <span className="icon">📞</span>
-              <p>+1 (555) EVER-GO</p>
+              <p>+251 938 444 444   or   +251 941 444 333</p>
+              
             </div>
             <div className="detail-item">
               <span className="icon">✉️</span>
